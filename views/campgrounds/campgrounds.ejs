@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+
+<br>
+<div class="main-body">
+	<div class="header">
+		<h1 class="main-heading"> Welcome to Yo Camp!! </h1>
+		<p class="tag"> View our chosen campgrounds</p>
+		<a class="add" href="/campgrounds/add"> Add new Campgrounds</a>
+	</div>
+
+	<div class="img-grid">
+		<% camps.forEach(function(camp){%>
+			<div class="holder">
+				<img class="imgs" src="<%=camp.pic%>">
+				<a href="campgrounds/<%=camp._id%>" class="img-name"> <%=camp.name%> </a>
+				
+			</div>
+		
+		<%});%>
+	</div>
+
+</div>
+
+
+<% include ../partials/footer %>

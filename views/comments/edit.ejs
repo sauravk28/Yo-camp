@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<a href="/campgrounds"> Show Campgrounds</a>
+<div class="form-holder">
+	<form method="post" action="/campgrounds/<%=campground_id%>/comments/<%=comment._id%>?_method=PUT" >
+		<p class="title ">Title:</p>
+		<input class="entry" type="text" name="comment[body]" value="<%=comment.body%>">
+		<br>
+		
+		<input class="sub-btn" type="submit">
+</form
+			
+</div>
+	
+<br>	
+  
+<% include ../partials/footer %>

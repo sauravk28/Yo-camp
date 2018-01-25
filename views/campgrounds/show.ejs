@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+<div class="show-pg">
+	
+	<!-- left-half begins -->
+	<div class="left-half">
+		<div class="category-list">
+			<p class="web-name">Yo Camp</p>
+			<a href="#" class="list selected">Category 1</a>
+			<a href="#" class="list">Category 2</a>
+			<a href="#" class="list">Category 3</a>	
+		</div>
+		
+		<div class="map">
+			
+		</div>
+
+	</div>
+	<!-- left-half dead-->
+
+	<!-- Right-half begins -->
+	<div class="right-half">
+
+		<div class="info-holder">
+			<img class="camp-img" src="<%= camps.pic%>">
+			<p class="camp-name"><%=camps.name%></p>
+			<p class="camp-desc"><%=camps.description%></p>
+			<% if(currentUser && camps.author.id.equals(currentUser._id)){ %>
+			<a href="/campgrounds/<%= camps._id %>/edit" class="edit-btn">Edit</a>
+			<form action="/campgrounds/<%=camps._id%>?_method=DELETE" method="POST">
+				<button class="delete-btn">Delete</button>
+			</form>
+			<% }%>
+		</div>
+
+		<div class="comments-holder">
+			<a href="/campgrounds/<%=camps._id%>/comments/new" class="comment-btn" >Comment</a>
+			<% camps.comments.forEach(function(comment){%>
+				<div class="comment">
+					<p class="comment-author"><%=comment.author.username%></p>
+					<br>
+					<p class="comment-duration">10 days ago</p>
+					 <p class="comment-body"><%=comment.body%></p>
+					 <% if(currentUser && comment.author.id.equals(currentUser._id)){%>
+					 <a href="/campgrounds/<%=camps._id%>/comments/<%=comment._id%>/edit" class="edit-comment-btn">Edit</a>
+					<form action="/campgrounds/<%=camps._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" class="comment-edit-form">
+						<button class="delete-comment-btn">Delete</button>
+					</form>	
+					<% }%>
+					
+
+				</div>
+			<% }); %>
+					
+
+			
+		</div>
+		
+	</div>
+
+	<!-- Right-half dead -->
+
+</div>
+
+<!-- Show-pg dead -->
+
+
+
+
+
+
+<% include ../partials/footer %>

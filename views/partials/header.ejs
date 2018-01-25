@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel= "stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+</head>
+
+<body>
+
+	<div class="nav-bar">
+		<!-- <p id="trademark">Yelpcamp</p> -->
+		<a href="/" class="trademark">Yo Camp</a>	
+		<div class="right-panel">
+			<% if(!currentUser){%>
+				<a class="buttons signup" href="/register">Sign up</a>
+				<a class="buttons login" href="/login">Login</a>
+						
+			<% } else {%>
+			<a class="buttons logout" href="/logout">Logout</a>
+			<% }%>
+		</div>
+	</div>	
+
+	<% if(error && error.length >0){%>
+		<div class="message-bar error-bar">
+			<p class="msg-text"><%=error%></p>
+		</div>
+	<% }%>
+	
+	<% if(success && success.length >0){%>
+		<div class="message-bar success-bar">
+			<p class="msg-text"><%=success%></p>
+		</div>
+	<% }%>

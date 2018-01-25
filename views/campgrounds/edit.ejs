@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<a href="/campgrounds"> Show Campgrounds</a>
+<div class="form-holder">
+	<form  action="/campgrounds/<%= camps._id %>?_method=PUT" method="POST">
+		<p class="title " for="newcamp">Name: </p>
+		<input class="entry" type="text" name="camps[name]" value="<%=camps.name%>">
+		<br>
+		<p class="title " for="newimg">Image:</p>
+		<input class="entry url" type="text" name="camps[pic]" value="<%=camps.pic%>">
+		<br>
+		<p class="title" for="newdesc">Description:</p>
+		<input class="entry" type="text" name="camps[description]" value="<%=camps.description%>">
+		<br>
+		<input class="sub-btn" type="submit">
+	</form
+			
+</div>
+	
+<br>	
+  
+<% include ../partials/footer %>

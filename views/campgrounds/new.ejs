@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<a href="/campgrounds"> Show Campgrounds</a>
+<div class="form-holder">
+	<form method="post" action="/campgrounds" >
+		<p class="title " for="newcamp">Name: </p>
+		<input class="entry" type="text" name="newcamp" placeholder="Enter name of camp">
+		<br>
+		<p class="title " for="newimg">Image:</p>
+		<input class="entry url" type="text" name="newimg" placeholder="Enter img url">
+		<br>
+		<p class="title" for="newdesc">Description:</p>
+		<input class="entry" type="text" name="newdesc" placeholder="Enter img description">
+		<br>
+		<input class="sub-btn" type="submit">
+	</form
+			
+</div>
+	
+<br>	
+  
+<% include ../partials/footer %>
